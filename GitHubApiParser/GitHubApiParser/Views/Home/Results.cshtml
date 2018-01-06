@@ -1,0 +1,35 @@
+﻿
+@model GitHubApiParser.Models.UserInfo
+@{
+    ViewBag.Title = "Results";
+}
+
+<h2>Results</h2>
+
+<div class="avatar">
+    <img src="@Model.AvatarUrl" />
+</div>
+
+<fieldset>
+    <p>
+        Login:
+        @Model.UserName
+    </p>
+    <p>
+        Location:
+        @Model.Location
+    </p>
+    <p>
+        AvatarUrl:
+        <a href="@Model.AvatarUrl">@Model.AvatarUrl</a>
+    </p>
+    <h4>
+        Top Repositories:
+    </h4>
+    <ol style="list-style: decimal inside;">
+        @foreach (var rep in Model.TopRepos)
+        {
+            <li>@rep</li>
+        }
+    </ol>
+</fieldset>
