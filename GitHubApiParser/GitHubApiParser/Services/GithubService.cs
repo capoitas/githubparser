@@ -9,7 +9,7 @@ using System.Web;
 
 namespace GitHubApiParser.Services
 {
-    public class GithubService
+    public class GithubService : IGithubService
     {
         HttpClient client;
         const string baseUrl = "https://api.github.com/users/";

@@ -1,4 +1,5 @@
 ﻿using GitHubApiParser.Models;
+using GitHubApiParser.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,13 @@ namespace GitHubApiParser.Controllers
 {
     public class HomeController : Controller
     {
-        GitHubApiParser.Services.GithubService _githubservice;
+        IGithubService _githubservice;
 
         // TODO: With a bit more time i should have implemented the dependency injection 
         // to pass the service to the controller
         public HomeController()
         {
-            _githubservice = new Services.GithubService();
+            _githubservice = new GithubService();
         }
 
         public ActionResult Index()
